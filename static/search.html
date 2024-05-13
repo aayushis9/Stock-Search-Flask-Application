@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Information</title>
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+</head>
+
+<body>
+    <div class="upper-content">
+        <h1>Stock Search</h1>
+        <div class="searchbar">
+            <div id="search">
+                <img class="act" type="submit" id="searchbtn" src="./search-solid.svg">
+                <input type="text" id="symbol" name="symbol" placeholder="Enter Stock Ticker Symbol">
+                <img class="act" type="clear" id="clear-button" src="./times-solid.svg">
+            </div>
+        </div>
+
+    </div>
+    <div id="result">
+        <div class="tabs">
+            <div class="company-tab tb highlight" onclick="tabChange('company')">Company</div>
+            <div class="summary-tab tb" onclick="tabChange('stock')">Stock Summary</div>
+            <div class="charts-tab tb" onclick="tabChange('charts')">Charts</div>
+            <div class="news-tab tb" onclick="tabChange('news')">Latest News</div>
+        </div>
+        <div class="company-container highlight" id="company">
+            <div>
+                <div class="imagelogo">
+                    <img id="company_logo">
+                </div>
+                <table>
+                    <tr>
+                        <td><b>Company Name</b></td>
+                        <td id="company_name"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Ticker Symbol</b></td>
+                        <td id="tic_symbol"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Exchange Code</b></td>
+                        <td id="exchange_code"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Company Start Date</b></td>
+                        <td id="ipo_date"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Category</b></td>
+                        <td id="industry_category"></td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+        <div class="company-container" id="stock">
+            <div id="stock_info">
+                <table>
+                    <tr>
+                        <td><b>Stock Ticker Symbol</b></td>
+                        <td id="ticker_symbol"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Trading Day</b></td>
+                        <td id="trading_day"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Previous Closing Price</b></td>
+                        <td id="previous_close"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Opening Price</b></td>
+                        <td id="opening_price"></td>
+                    </tr>
+                    <tr>
+                        <td><b>High Price</b></td>
+                        <td id="high_price"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Low Price</b></td>
+                        <td id="low_price"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Change</b></td>
+                        <td id="change"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Change Percent</b></td>
+                        <td id="change_percent"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="company-container" id="charts">
+            <div id="stockChartContainer" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+        </div>
+
+        <div class="company-container" id="news">
+            <div class="news-card">
+                <img src="image-url.jpg" alt="Article Image">
+                <div class="news-details">
+                  <h3>Article Title</h3>
+                  <p>Published on: February 17, 2024</p>
+                  <a href="#" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div>
+
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
